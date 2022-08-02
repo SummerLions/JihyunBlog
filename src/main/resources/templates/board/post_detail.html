@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" th:href="@{/reset.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/base.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/post_detail.css}">
+<h2 th:text="${post.subject}"></h2>
+<div th:text="${post.content}"></div>
+<h5 th:text="|${#lists.size(post.commentList)}개의 답변이 있습니다.|"></h5>
+<div>
+    <ul>
+        <li th:each="answer : ${post.commentList}" th:text="${answer.content}"></li>
+    </ul>
+</div>
+<form th:action="@{|comment/create/${post.id}|}" method="post">
+    <textarea name="content" id="content" rows="1"></textarea>
+    <div class="submit"><input type="submit" value="댓글등록"></div>
+</form>
+</body>
+</html>

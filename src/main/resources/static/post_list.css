@@ -1,0 +1,21 @@
+.number{
+    width:10%;
+    text-align: center;
+}
+
+.subject{
+    width:60%;
+}
+
+.date{
+    width:30%;
+}
+
+button{
+    background: skyblue;
+    width:120px;
+    height: 40px;
+    align-items: center;
+    margin:10px;
+    border-radius: 10px;
+}
